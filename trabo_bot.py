@@ -50,10 +50,10 @@ def main():
         last_update_id = last_update['update_id']
         last_chat_text = last_update['message']['text']
         last_chat_id = last_update['message']['chat']['id']
-        last_chat_name = last_update['message']['chat']['first_name']
+#        last_chat_name = last_update['message']['chat']['first_name']
 
         if last_chat_text.lower() in greetings and today == now.day:
-            greet_bot.send_message(last_chat_id, 'хуй пизда, {}'.format(last_chat_name))
+            greet_bot.send_message(last_chat_id, 'хуй пизда')
             # today += 1
 
         new_offset = last_update_id + 1
