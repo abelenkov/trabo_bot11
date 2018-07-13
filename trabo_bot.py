@@ -31,7 +31,7 @@ class BotHandler:
         return last_update
 
 greet_bot = BotHandler("678838871:AAF2Wpv3hXNCWDZ6QzJvJhQN_fKel0YuCSY")  
-greetings = ('здравствуй', 'привет', 'ку', 'здорово')  
+greetings = ('привет трабо')  
 now = datetime.datetime.now()
 
 
@@ -50,17 +50,9 @@ def main():
         last_chat_id = last_update['message']['chat']['id']
         last_chat_name = last_update['message']['chat']['first_name']
 
-        if last_chat_text.lower() in greetings and today == now.day and 6 <= hour < 12:
-            greet_bot.send_message(last_chat_id, 'Доброе утро, {}'.format(last_chat_name))
-            today += 1
-
-        elif last_chat_text.lower() in greetings and today == now.day and 12 <= hour < 17:
-            greet_bot.send_message(last_chat_id, 'Добрый день, {}'.format(last_chat_name))
-            today += 1
-
-        elif last_chat_text.lower() in greetings and today == now.day and 17 <= hour < 23:
-            greet_bot.send_message(last_chat_id, 'Добрый вечер, {}'.format(last_chat_name))
-            today += 1
+        if last_chat_text.lower() in greetings and today == now.day:
+            greet_bot.send_message(last_chat_id, 'хуй пизда, {}'.format(last_chat_name))
+            # today += 1
 
         new_offset = last_update_id + 1
 
